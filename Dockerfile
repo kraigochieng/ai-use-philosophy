@@ -2,9 +2,9 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-COPY pyproject.toml uv.lock ./
-RUN pip install --no-cache-dir uv && uv sync --frozen
-
+COPY pyproject.toml uv.lock README.md ./
 COPY src/ ./src/
 
-CMD ["uv", "run", "python", "-m", "ai_use_philosophy.server"]
+RUN pip install --no-cache-dir uv && uv sync --frozen
+
+CMD ["uv", "run", "ai-use-philosophy"]

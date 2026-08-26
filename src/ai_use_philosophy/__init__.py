@@ -9,5 +9,5 @@ def main() -> None:
         transport="streamable-http",
         host=settings.host,
         port=settings.port,
-        path="/mcp",
+        streamable_http_path="/mcp",
     )

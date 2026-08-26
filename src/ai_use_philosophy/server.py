@@ -7,7 +7,7 @@ from ai_use_philosophy.repository import PrincipleRepository
 from ai_use_philosophy.schemas import PrincipleOut
 
 mcp = MCPServer("ai-use-philosophy")
-repo = PrincipleRepository()
+repo = PrincipleRepository(db_url=settings.db_url)
 
 
 @mcp.prompt()

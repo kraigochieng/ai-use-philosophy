@@ -19,6 +19,8 @@ Principles are plain text rows in a database. The server exposes them through:
 
 The server runs over the **streamable-HTTP** transport and listens at `/mcp`.
 
+A hosted instance is available at **https://ai-use-philosophy.onrender.com/mcp**.
+
 ## Requirements
 
 - Python >= 3.11
@@ -66,23 +68,27 @@ docker run -p 8000:8000 --env-file .env ai-use-philosophy
 
 ## Deployment
 
-The included `Dockerfile` is deployment-ready. On hosts with ephemeral
-filesystems (e.g. Render's free tier) the SQLite file does not persist across
-restarts — point `DB_URL` at a managed PostgreSQL instance instead.
+The included `Dockerfile` is deployment-ready and is what runs the hosted
+instance on [Render](https://render.com) at
+https://ai-use-philosophy.onrender.com/mcp. On hosts with ephemeral filesystems
+(e.g. Render's free tier) the SQLite file does not persist across restarts —
+point `DB_URL` at a managed PostgreSQL instance instead.
 
 ## Connecting a client
 
-Point an MCP client at the server's `/mcp` endpoint. For a local run:
+Point an MCP client at the server's `/mcp` endpoint — the hosted instance:
 
 ```json
 {
   "mcpServers": {
     "ai-use-philosophy": {
-      "url": "http://localhost:8000/mcp"
+      "url": "https://ai-use-philosophy.onrender.com/mcp"
     }
   }
 }
 ```
+
+or a local run at `http://localhost:8000/mcp`.
 
 ## Project layout
 

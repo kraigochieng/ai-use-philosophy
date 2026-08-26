@@ -58,8 +58,8 @@ def delete_principle(principle_id: int) -> str:
     )
 
 
-if __name__ == "__main__":
-    logger.info(f"Starting MCP server on {settings.host}:{settings.port}")
-    mcp.run(
-        transport="streamable-http", host=settings.host, port=settings.port, path="/mcp"
-    )
+# if __name__ == "__main__":
+#     logger.info(f"Starting MCP server on {settings.host}:{settings.port}")
+#     mcp.run(
+#         transport="streamable-http", host=settings.host, port=settings.port, path="/mcp"
+#     )

@@ -18,7 +18,7 @@ Principles are plain text rows in a database. The server exposes them through:
 | Tool   | `delete_principle`     | Delete a principle by id.                              |
 
 The server runs over the **streamable-HTTP** transport and listens at `/mcp`.
-Visiting the site root (`/`) serves an HTML page with setup directions.
+Visiting the site root (`/`) serves a plain-text page with setup directions.
 
 A hosted instance is available at **https://ai-use-philosophy.onrender.com/mcp**.
 
@@ -97,7 +97,7 @@ or a local run at `http://localhost:8000/mcp`.
 src/ai_use_philosophy/
 ├── __init__.py     # entrypoint: runs the MCP server (streamable-http)
 ├── server.py       # MCP server: prompt + tool definitions, "/" landing route
-├── homepage.py     # HTML setup page served at "/"
+├── homepage.py     # plain-text setup page served at "/"
 ├── repository.py   # PrincipleRepository — CRUD over the database
 ├── models.py       # SQLAlchemy model (Principle)
 ├── schemas.py      # Pydantic output schema (PrincipleOut)

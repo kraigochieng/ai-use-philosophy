@@ -1,10 +1,10 @@
 # server.py
 from mcp.server import MCPServer
 from starlette.requests import Request
-from starlette.responses import HTMLResponse, Response
+from starlette.responses import PlainTextResponse, Response
 
 from ai_use_philosophy.config import settings
-from ai_use_philosophy.homepage import HOMEPAGE_HTML
+from ai_use_philosophy.homepage import HOMEPAGE_TEXT
 from ai_use_philosophy.logger import logger
 from ai_use_philosophy.repository import PrincipleRepository
 from ai_use_philosophy.schemas import PrincipleOut
@@ -17,7 +17,7 @@ repo = PrincipleRepository(db_url=settings.db_url)
 async def homepage(request: Request) -> Response:
     """Serve setup directions at the site root."""
     logger.info("Route call: GET /")
-    return HTMLResponse(HOMEPAGE_HTML)
+    return PlainTextResponse(HOMEPAGE_TEXT)
 
 
 @mcp.prompt()
